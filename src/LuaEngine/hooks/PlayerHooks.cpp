@@ -974,3 +974,39 @@ uint32 ALE::OnPlayerDealDamage(Player* player, Unit* target, uint32 damage, Dama
     CleanUpStack(4);
     return result;
 }
+
+bool ALE::OnPlayerbotAction(Player* bot, uint32 state, const std::string& actionName, Unit* target, uint32 threatType, const std::string& targetName, float relevance, const std::string& trigger)
+{
+    START_HOOK_WITH_RETVAL(PLAYERBOT_EVENT_ON_ACTION, false);
+    Push(bot);
+    Push(state);
+    Push(actionName);
+    Push(target);
+    Push(threatType);
+    Push(targetName);
+    Push(relevance);
+    Push(trigger);
+    return CallAllFunctionsBool(PlayerEventBindings, key, false);
+}
+
+bool ALE::OnPlayerbotCombatCastAction(Player* bot, uint32 state, Unit* target, uint32 threatType, float relevance, const std::string& trigger, uint32 spellId)
+{
+    START_HOOK_WITH_RETVAL(PLAYERBOT_EVENT_ON_COMBAT_ACTION, false);
+    Push(bot);
+    Push(state);
+    Push(target);
+    Push(threatType);
+    Push(relevance);
+    Push(trigger);
+    Push(spellId);
+    return CallAllFunctionsBool(PlayerEventBindings, key, false);
+}
+
+bool ALE::OnPlayerbotRpgAction(Player* bot, const std::string& actionName, Unit* rpgTarget)
+{
+    START_HOOK_WITH_RETVAL(PLAYERBOT_EVENT_ON_RPG_ACTION, false);
+    Push(bot);
+    Push(actionName);
+    Push(rpgTarget);
+    return CallAllFunctionsBool(PlayerEventBindings, key, false);
+}

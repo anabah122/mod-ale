@@ -634,6 +634,7 @@ ALERegister<Player> PlayerMethods[] =
     { "IsInGroup", &LuaPlayer::IsInGroup },
     { "IsInGuild", &LuaPlayer::IsInGuild },
     { "IsGM", &LuaPlayer::IsGM },
+    { "IsBot", &LuaPlayer::IsBot },
     { "IsImmuneToDamage", &LuaPlayer::IsImmuneToDamage },
     { "IsAlliance", &LuaPlayer::IsAlliance },
     { "IsHorde", &LuaPlayer::IsHorde },
@@ -718,7 +719,6 @@ ALERegister<Player> PlayerMethods[] =
     { "CanTeleport", &LuaPlayer::CanTeleport },
     { "IsSpectator", &LuaPlayer::IsSpectator },
     { "HasKnownTaxiNode", &LuaPlayer::HasKnownTaxiNode },
-    { "IsBot", &LuaPlayer::IsBot },
     // { "HasSpellMod", &LuaPlayer::HasSpellMod },
 
     // Gossip

@@ -238,6 +238,9 @@ namespace Hooks
         PLAYER_EVENT_ON_MODIFY_HEAL_RECEIVED                =     71,       // (event, player, target, heal, spellInfo) - Can return new heal amount
         PLAYER_EVENT_ON_DEAL_DAMAGE                         =     72,       // (event, player, target, damage, damagetype) - Can return new damage amount
         PLAYER_EVENT_ON_RELEASED_GHOST                      =     73,       // (event, player)
+        PLAYERBOT_EVENT_ON_ACTION                           =     74,       // (event, bot, state, actionName, target, threatType, targetName, relevance, trigger) - return true to skip
+        PLAYERBOT_EVENT_ON_COMBAT_ACTION                    =     75,       // (event, bot, state, target, threatType, relevance, trigger, spellId) - spellId or 0. Return true to override combat rotation
+        PLAYERBOT_EVENT_ON_RPG_ACTION                       =     76,       // (event, bot, actionName, rpgTarget) - actionName: "rpg buy", "rpg sell", "rpg craft", "rpg repair", "rpg train", etc.
 
         PLAYER_EVENT_COUNT
     };

@@ -370,6 +370,9 @@ public:
     void OnResurrect(Player* pPlayer);
     void OnQuestAbandon(Player* pPlayer, uint32 questId);
     void OnLearnTalents(Player* pPlayer, uint32 talentId, uint32 talentRank, uint32 spellid);
+    bool OnPlayerbotAction(Player* bot, uint32 state, const std::string& actionName, Unit* target, uint32 threatType, const std::string& targetName, float relevance, const std::string& trigger);
+    bool OnPlayerbotCombatCastAction(Player* bot, uint32 state, Unit* target, uint32 threatType, float relevance, const std::string& trigger, uint32 spellId);
+    bool OnPlayerbotRpgAction(Player* bot, const std::string& actionName, Unit* rpgTarget);
     InventoryResult OnCanUseItem(const Player* pPlayer, uint32 itemEntry);
     void OnLuaStateClose();
     void OnLuaStateOpen();
